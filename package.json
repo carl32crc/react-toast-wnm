@@ -10,7 +10,7 @@
     "lint": "standard",
     "format": "prettier-standard --format",
     "storybook": "start-storybook -p 9009 -s public",
-    "test": "jest --coverage"
+    "test": "jest --watch --coverage"
   },
   "keywords": [],
   "author": "",
@@ -20,11 +20,15 @@
     "@storybook/react": "^6.0.16",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^10.4.9",
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^24.0.24",
     "@types/react": "^16.9.46",
     "@types/react-dom": "^16.9.8",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.3",
     "jest": "^24.9.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -35,7 +39,7 @@
     "rollup-plugin-typescript2": "^0.25.3",
     "standard": "^14.3.1",
     "standard-prettier": "^1.0.1",
-    "ts-jest": "^24.2.0",
+    "ts-jest": "^26.2.0",
     "typescript": "^3.7.3"
   },
   "jest": {

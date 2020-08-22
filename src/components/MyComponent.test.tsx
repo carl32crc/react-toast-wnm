@@ -1,9 +1,11 @@
-import * as React from 'react'
-import { render } from '@testing-library/react'
-import '@testing-library/jest-dom/extend-expect'
+import React from 'react'
+import { shallow } from 'enzyme';
 import { MyComponent } from './MyComponent';
 
 test('Renders', async () => {
-  const { getByRole } = render(<MyComponent />)
-  expect(getByRole('heading')).toHaveTextContent('My First Component')
+  const wrapper = shallow(<MyComponent />)
+  const result = wrapper
+    .text()
+    .includes('My First Component')
+  expect(result).toEqual(true);
 })
