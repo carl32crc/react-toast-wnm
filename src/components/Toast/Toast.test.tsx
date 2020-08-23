@@ -53,9 +53,19 @@ describe('Toast', () => {
     const result = wrapper.prop('width');
     expect(result).toEqual('750px');
   });
-  it('width', () => {
+  it('height', () => {
     const wrapper = mount(<Toast height="50px" />);
     const result = wrapper.prop('height');
     expect(result).toEqual('50px');
+  });
+  it('position', () => {
+    const wrapper = mount(<Toast position="top-center" />);
+    const result = wrapper.prop('position');
+    expect(result).toEqual('top-center');
+  });
+  it('type', () => {
+    const wrapper = mount(<Toast type="success" />);
+    const result = wrapper.prop('type');
+    expect(result).toEqual('success');
   });
 });

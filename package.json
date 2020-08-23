@@ -9,7 +9,8 @@
     "build": "rollup -c",
     "format": "prettier-standard --format",
     "storybook": "start-storybook -p 9009 -s public",
-    "test": "jest --watch --coverage",
+    "test": "jest --watch",
+    "coverage": "jest --coverage",
     "lint": "eslint './src/**/*.{ts,tsx}'"
   },
   "keywords": [],
