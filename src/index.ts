@@ -1,1 +1,1 @@
-export  { MyComponent } from './components/MyComponent'
+export { MyComponent } from './components/MyComponent';
