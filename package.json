@@ -42,6 +42,8 @@
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "2.x",
     "jest": "^24.9.0",
+    "jsdom": "^16.4.0",
+    "jsdom-global": "^3.0.2",
     "prettier": "2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -78,5 +80,8 @@
   "peerDependencies": {
     "react": "^16",
     "react-dom": "^16"
+  },
+  "dependencies": {
+    "typestyle": "^2.1.0"
   }
 }
