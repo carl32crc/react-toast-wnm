@@ -49,12 +49,7 @@ type toastType = {
 };
 
 export const closeIcon = style({
-  fontFamily: 'Garamond, Apple Garamond',
-  fontSize: '25px',
-  position: 'absolute',
   cursor: 'pointer',
-  right: '12px',
-  top: '5px',
 });
 
 export const toastContainer = style({
@@ -68,12 +63,11 @@ export const toastContainer = style({
 
 export const wrapperToastGenericStyles = style({
   display: 'flex',
-  padding: '24px 32px',
   boxSizing: 'border-box',
   alignItems: 'center',
+  justifyContent: 'space-between',
   fontFamily: 'Roboto, sans-serif',
   height: '50px',
-  color: '#fff',
   $nest: {
     ':last-child': {
       marginBottom: 0,
@@ -93,20 +87,24 @@ export const notification = style({
 
 export const content = style({
   display: 'flex',
-  flexDirection: 'column',
+  alignItems: 'center',
   $nest: {
-    '> div:first-child': {
+    '> div > div:first-child': {
       fontWeight: 500,
       fontSize: '18px',
       lineHeight: '32px',
       letterSpacing: '0.006em',
     },
-    '> div:last-child': {
+    '> div > div:last-child': {
       fontSize: '14px',
       lineHeight: '24px',
       letterSpacing: '0.006em',
     },
   },
+});
+
+export const leftIcon = style({
+  marginRight: '16px',
 });
 
 // CONTAINER TOAST

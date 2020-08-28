@@ -58,11 +58,11 @@
     "typescript": "^3.7.3"
   },
   "jest": {
-    "preset": "ts-jest",
     "testEnvironment": "jsdom",
     "testPathIgnorePatterns": [
       "build/"
-    ]
+    ],
+    "rootDir": "./"
   },
   "standard": {
     "ignore": [

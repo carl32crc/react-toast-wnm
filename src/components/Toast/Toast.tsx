@@ -1,75 +1,85 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { style, classes } from 'typestyle';
-
 import {
-  closeIcon,
-  content,
   notification,
   toastPosition,
   toastType,
   wrapperToastGenericStyles,
 } from './Toast.style';
+import { ActionsContent } from './CloseToast';
+import { ContentToast } from './ContentToast';
 
-interface ToastOptions {
-  action?: () => void;
-  cancelAction?: () => void;
+type ToastOptions = {
+  id?: string;
+  backgroundColor?: string;
+  color?: string;
   height?: string;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  padding?: string;
   position?: string;
-  removeToast?: () => void;
   subtitle?: string;
   title?: string;
   type?: string;
   width?: string;
-}
+  children?: {
+    content?: ReactNode;
+    actions?: ReactNode;
+  };
+};
 
 export const Toast: React.FC<ToastOptions> = ({
-  action,
-  cancelAction,
+  id,
+  backgroundColor,
+  color = '#fff',
   height = '104px',
   onMouseEnter,
   onMouseLeave,
+  padding = '24px 32px',
   position = 'bottom-right',
-  removeToast,
   subtitle,
   title,
   type = 'default',
   width = '456px',
+  children,
 }) => {
-  const _width = style({
-    width,
+  const _backgroundColor = style({
+    backgroundColor,
+  });
+  const _color = style({
+    color,
   });
   const _height = style({
     height,
   });
+  const _padding = style({
+    padding,
+  });
+  const _width = style({
+    width,
+  });
   return (
     <div
       className={classes(
-        _width,
+        _backgroundColor,
+        _color,
         _height,
-        wrapperToastGenericStyles,
+        _padding,
+        _width,
         notification,
         toastPosition[position],
-        toastType[type]
+        !backgroundColor && toastType[type],
+        wrapperToastGenericStyles
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className={content}>
-        {title && <div>{title}</div>}
-        {subtitle && <div>{subtitle}</div>}
-      </div>
-
-      {removeToast && (
-        <span className={closeIcon} onClick={removeToast}>
-          Remove
-        </span>
-      )}
-
-      {action && <button onClick={action}>Action</button>}
-
-      {cancelAction && <button onClick={cancelAction}>Cancel Action</button>}
+      <ContentToast subtitle={subtitle} title={title}>
+        {children?.content && children.content}
+      </ContentToast>
+      <ActionsContent id={id}>
+        {children?.actions && children.actions}
+      </ActionsContent>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { Toast } from './Toast';
+import { successToast, errorToast } from './components';
 
 // const sleep = (time = 1000): Promise<() => void> =>
 //   new Promise((r) => setTimeout(r, time));
@@ -20,33 +21,21 @@ describe('Toast', () => {
   });
   it('title', () => {
     const title = 'Random title';
-    const wrapper = shallow(<Toast title={title} />);
+    const wrapper = mount(<Toast title={title}>{successToast}</Toast>);
     const result = wrapper.find('div').at(0).text().includes(title);
     expect(result).toEqual(true);
   });
+  it('id', () => {
+    const id = 'aksjdalksj9239874';
+    const wrapper = mount(<Toast id={id} />);
+    const result = wrapper.prop('id');
+    expect(result).toEqual(id);
+  });
   it('subtitle', () => {
     const subtitle = 'Random subtitle';
-    const wrapper = shallow(<Toast subtitle={subtitle} />);
+    const wrapper = mount(<Toast subtitle={subtitle}>{errorToast}</Toast>);
     const result = wrapper.find('div').at(0).text().includes(subtitle);
     expect(result).toEqual(true);
-  });
-  it('remove toast', () => {
-    const removeToast = jest.fn();
-    const wrapper = shallow(<Toast removeToast={removeToast} />);
-    wrapper.find('span').simulate('click');
-    expect(removeToast.mock.calls).toEqual([[]]);
-  });
-  it('action', () => {
-    const action = jest.fn();
-    const wrapper = shallow(<Toast action={action} />);
-    wrapper.find('button').at(0).simulate('click');
-    expect(action.mock.calls).toEqual([[]]);
-  });
-  it('cancel action', () => {
-    const cancelAction = jest.fn();
-    const wrapper = shallow(<Toast cancelAction={cancelAction} />);
-    wrapper.find('button').at(0).simulate('click');
-    expect(cancelAction.mock.calls).toEqual([[]]);
   });
   it('width', () => {
     const wrapper = mount(<Toast width="750px" />);
