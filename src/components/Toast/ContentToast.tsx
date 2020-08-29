@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, memo } from 'react';
 
 interface ContentToast {
   children?: ReactNode;
@@ -6,16 +6,16 @@ interface ContentToast {
   subtitle?: string;
 }
 
-export const ContentToast: React.FC<ContentToast> = ({
-  children,
-  subtitle,
-  title,
-}) => {
-  const clones = React.Children.map(children, (child: any) =>
-    React.cloneElement(child, {
-      subtitle,
-      title,
-    })
-  );
-  return <>{clones}</>;
-};
+// eslint-disable-next-line react/display-name
+export const ContentToast: React.FC<ContentToast> = memo(
+  ({ children, subtitle, title }) => {
+    const clones = React.Children.map(children, (child: any) =>
+      React.cloneElement(child, {
+        subtitle,
+        title,
+        autoDismiss: false,
+      })
+    );
+    return <>{clones}</>;
+  }
+);

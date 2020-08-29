@@ -3,9 +3,6 @@ import { shallow, mount } from 'enzyme';
 import { Toast } from './Toast';
 import { successToast, errorToast } from './components';
 
-// const sleep = (time = 1000): Promise<() => void> =>
-//   new Promise((r) => setTimeout(r, time));
-
 describe('Toast', () => {
   it('onMouseEnter', () => {
     const onMouseEnter = jest.fn();

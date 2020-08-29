@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useToast } from './../../hooks/useToast';
 import { Toast } from './Toast';
 import {
   defaultToast,
@@ -101,3 +102,38 @@ export const toastsWithCloseToast = (): JSX.Element => (
     </Toast>
   </>
 );
+
+// type Actions = {
+//   closeToast?: () => void;
+// };
+
+// const CustomActions: React.FC<Actions> = ({ closeToast }): JSX.Element => (
+//   <div>
+//     <button onClick={closeToast}>CLOSE</button>
+//   </div>
+// );
+
+// const CustomContent = (): JSX.Element => (
+//   <div>
+//     <h1>MY CUSTOM TITLE</h1>
+//   </div>
+// );
+
+export const ButtonDefaultToast = (): JSX.Element => {
+  const toast = useToast();
+  return (
+    <button
+      onClick={(): void => {
+        toast({
+          title: 'Default title',
+          subtitle: 'Default subtitle',
+          autoDismiss: false,
+          //actions: <CustomActions />,
+          //content: <CustomContent />,
+        });
+      }}
+    >
+      DEFAULT TOAST
+    </button>
+  );
+};

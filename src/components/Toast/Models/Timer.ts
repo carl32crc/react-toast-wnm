@@ -1,5 +1,5 @@
 export class Timer {
-  timerId: NodeJS.Timeout;
+  timerId: any;
   start: number;
   remaining: number;
   destroyed: boolean;

@@ -1,5 +1,6 @@
+import React from 'react';
 import { generateUUID } from 'helpers/generateUUID';
-import { Actions, contentTypes } from './../components';
+import { Actions, contentTypes } from '../components';
 import { Timer } from './Timer';
 
 export interface Options {
@@ -53,7 +54,7 @@ export class Toast {
   }: Options) {
     this.id = generateUUID();
     this.content = content ? content : contentTypes[type];
-    if (isClosable) this.actions = actions ? actions : Actions;
+    if (isClosable) this.actions = actions ? actions : <Actions />;
     if (autoDismiss && onDismiss) {
       this.timer = new Timer(onDismiss.bind(undefined, this.id), delay);
     }
@@ -67,4 +68,12 @@ export class Toast {
     if (type) this.type = type;
     if (width) this.width = width;
   }
+
+  onMouseEnter = (): void => {
+    this.timer && this.timer.pause();
+  };
+
+  onMouseLeave = (): void => {
+    this.timer && this.timer.resume();
+  };
 }
