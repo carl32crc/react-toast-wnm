@@ -83,6 +83,7 @@
     "react-dom": "^16"
   },
   "dependencies": {
-    "typestyle": "^2.1.0"
+    "typestyle": "^2.1.0",
+    "uuidv4": "^6.2.3"
   }
 }
