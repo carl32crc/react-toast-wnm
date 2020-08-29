@@ -83,7 +83,8 @@
     "react-dom": "^16"
   },
   "dependencies": {
+    "@types/uuid": "^8.3.0",
     "typestyle": "^2.1.0",
-    "uuidv4": "^6.2.3"
+    "uuid": "^8.3.0"
   }
 }

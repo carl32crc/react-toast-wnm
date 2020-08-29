@@ -15,7 +15,7 @@ describe('Subject', () => {
     subject.publish(data);
   });
   it('detach', () => {
-    const myObserver = (data): void => {
+    const myObserver = (data: any): void => {
       console.log(data);
     };
     const subject = new Subject();
