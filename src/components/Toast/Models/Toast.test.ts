@@ -81,4 +81,21 @@ describe('Toast', () => {
     const toast = new Toast(options);
     expect(toast.id).toBeTruthy();
   });
+  it('with actions', async () => {
+    const options = {};
+    const toast = new Toast(options);
+    expect(toast.actions).toBeTruthy();
+  });
+  it('without actions', async () => {
+    const options = {
+      isClosable: false,
+    };
+    const toast = new Toast(options);
+    expect(toast.actions).toBeFalsy();
+  });
+  it('with content', async () => {
+    const options = {};
+    const toast = new Toast(options);
+    expect(toast.content).toBeTruthy();
+  });
 });

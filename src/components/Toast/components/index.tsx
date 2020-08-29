@@ -37,3 +37,13 @@ export const customToast = {
   actions: <CustomAct />,
   content: <CustomContent />,
 };
+
+export const contentTypes = {
+  success: <SuccessContent />,
+  default: <SuccessContent />,
+  error: <ErrorContent />,
+  warning: <WarningContent />,
+  info: <InfoContent />,
+};
+
+export { Actions };
