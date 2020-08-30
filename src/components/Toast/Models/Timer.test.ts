@@ -6,20 +6,20 @@ const sleep = (time = 1000): Promise<() => void> =>
 describe('Timer model', () => {
   it('pause', async () => {
     const callback = jest.fn();
-    const timer = new Timer(callback, 3000);
-    expect(timer.remaining).toEqual(3000);
-    await sleep(1000);
+    const timer = new Timer(callback, 1000);
+    expect(timer.remaining).toEqual(1000);
+    await sleep(500);
     timer.pause();
-    expect(timer.remaining).toBeLessThan(3000);
+    expect(timer.remaining).toBeLessThan(1000);
   });
   it('resume', async () => {
     const callback = jest.fn();
-    const timer = new Timer(callback, 3000);
+    const timer = new Timer(callback, 1000);
     const _initialStart = Object.assign({}, { start: timer.start });
-    expect(timer.remaining).toEqual(3000);
+    expect(timer.remaining).toEqual(1000);
     await sleep(500);
     timer.pause();
-    expect(timer.remaining).toBeLessThan(3000);
+    expect(timer.remaining).toBeLessThan(1000);
     timer.resume();
     expect(timer.start).toBeGreaterThan(_initialStart.start);
   });

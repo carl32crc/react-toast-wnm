@@ -10,7 +10,7 @@
     "format": "prettier-standard --format",
     "storybook": "start-storybook -p 9009 -s public",
     "test": "jest --watch --runInBand --detectOpenHandles",
-    "coverage": "jest --coverage --runInBand --detectOpenHandles",
+    "coverage": "jest --coverage --runInBand",
     "lint": "eslint './src/**/*.{ts,tsx}'"
   },
   "keywords": [],
