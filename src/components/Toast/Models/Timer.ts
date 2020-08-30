@@ -1,5 +1,7 @@
+type timerId = ReturnType<typeof setTimeout>;
+
 export class Timer {
-  timerId: any;
+  timerId: timerId;
   start: number;
   remaining: number;
   destroyed: boolean;

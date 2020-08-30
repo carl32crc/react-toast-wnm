@@ -6,8 +6,8 @@ import {
   toastType,
   wrapperToastGenericStyles,
 } from './Toast.style';
-import { ActionsContent } from './CloseToast';
-import { ContentToast } from './ContentToast';
+import { Actions } from './Toast.actions';
+import { Content } from './Toast.content';
 
 type ToastOptions = {
   id?: string;
@@ -74,12 +74,10 @@ export const Toast: React.FC<ToastOptions> = ({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <ContentToast subtitle={subtitle} title={title}>
+      <Content subtitle={subtitle} title={title}>
         {children?.content && children.content}
-      </ContentToast>
-      <ActionsContent id={id}>
-        {children?.actions && children.actions}
-      </ActionsContent>
+      </Content>
+      <Actions id={id}>{children?.actions && children.actions}</Actions>
     </div>
   );
 };

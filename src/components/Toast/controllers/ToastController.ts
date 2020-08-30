@@ -26,6 +26,6 @@ class ToastController {
 
 const toastController = new ToastController(new Subject());
 
-containerToastPortal();
+containerToastPortal && containerToastPortal();
 
 export { toastController, ToastController };

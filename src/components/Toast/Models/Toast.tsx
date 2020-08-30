@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { generateUUID } from 'helpers/generateUUID';
 import { Actions, contentTypes } from '../components';
 import { Timer } from './Timer';
 
 export interface Options {
-  actions?: any;
+  actions?: ReactElement;
   autoDismiss?: boolean;
   backgroundColor?: string;
   color?: string;
-  content?: any;
+  content?: ReactElement;
   delay?: number;
   height?: string;
   isClosable?: boolean;
@@ -22,10 +22,10 @@ export interface Options {
 }
 
 export class Toast {
-  actions?: any;
+  actions?: ReactElement;
   backgroundColor?: string;
   color?: string;
-  content?: any;
+  content?: ReactElement;
   height?: string;
   id: string;
   padding?: string;
