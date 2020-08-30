@@ -54,6 +54,7 @@ export const closeIcon = style({
 
 export const toastContainer = style({
   position: 'fixed',
+  zIndex: 2000,
   $nest: {
     '> div:last-child': {
       marginBottom: 0,

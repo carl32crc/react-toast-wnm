@@ -33,8 +33,8 @@ export class Toast {
   subtitle?: string;
   timer: Timer;
   title?: string;
-  type?: string;
-  width: string;
+  type: string;
+  width?: string;
   constructor({
     actions,
     autoDismiss = true,
@@ -52,20 +52,20 @@ export class Toast {
     type = 'default',
     width,
   }: Options) {
-    this.id = generateUUID();
     this.content = content ? content : contentTypes[type];
-    if (isClosable) this.actions = actions ? actions : <Actions />;
+    this.id = generateUUID();
+    this.position = position;
+    this.type = type;
     if (autoDismiss && onDismiss) {
       this.timer = new Timer(onDismiss.bind(undefined, this.id), delay);
     }
     if (backgroundColor) this.backgroundColor = backgroundColor;
     if (color) this.color = color;
     if (height) this.height = height;
+    if (isClosable) this.actions = actions ? actions : <Actions />;
     if (padding) this.padding = padding;
-    if (position) this.position = position;
     if (subtitle) this.subtitle = subtitle;
     if (title) this.title = title;
-    if (type) this.type = type;
     if (width) this.width = width;
   }
 
