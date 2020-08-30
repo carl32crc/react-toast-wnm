@@ -122,18 +122,35 @@ export const toastsWithCloseToast = (): JSX.Element => (
 export const ButtonDefaultToast = (): JSX.Element => {
   const toast = useToast();
   return (
-    <button
-      onClick={(): void => {
-        toast({
-          title: 'Default title',
-          subtitle: 'Default subtitle',
-          autoDismiss: false,
-          //actions: <CustomActions />,
-          //content: <CustomContent />,
-        });
-      }}
-    >
-      DEFAULT TOAST
-    </button>
+    <>
+      <button
+        onClick={(): void => {
+          toast({
+            title: 'Default title',
+            subtitle: 'Default subtitle',
+            autoDismiss: false,
+            //actions: <CustomActions />,
+            //content: <CustomContent />,
+          });
+        }}
+      >
+        DEFAULT TOAST
+      </button>
+      <button
+        onClick={(): void => {
+          toast({
+            title: 'Default title',
+            subtitle: 'Default subtitle',
+            autoDismiss: false,
+            position: 'top-center',
+            type: 'success',
+            //actions: <CustomActions />,
+            //content: <CustomContent />,
+          });
+        }}
+      >
+        DEFAULT TOAST
+      </button>
+    </>
   );
 };

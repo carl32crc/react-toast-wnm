@@ -46,7 +46,7 @@ export class Toast {
     isClosable = true,
     onDismiss,
     padding,
-    position,
+    position = 'bottom-right',
     subtitle,
     title,
     type = 'default',
