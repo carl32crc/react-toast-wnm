@@ -1,14 +1,14 @@
 import React from 'react';
 
-export const ErrorIcon = (props: any): JSX.Element => (
+export const WarningIc = (props: any): JSX.Element => (
   <svg
     role="img"
     viewBox="0 0 24 24"
     aria-labelledby="dangerIconTitle"
     stroke={props.color}
-    strokeWidth="1"
-    strokeLinecap="square"
-    strokeLinejoin="miter"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     fill="none"
     {...props}
   >

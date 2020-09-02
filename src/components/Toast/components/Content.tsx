@@ -1,5 +1,10 @@
 import React from 'react';
-import { ErrorIcon, InfoIcon, SuccessIcon, WarningIcon } from 'Icons';
+import {
+  ErrorIcon,
+  InfoIcon,
+  SuccessIcon,
+  WarningIcon,
+} from 'components/Icons';
 import { content, leftIcon } from '../Toast.style';
 
 type Content = {

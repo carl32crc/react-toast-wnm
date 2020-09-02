@@ -5,12 +5,11 @@ export const CloseIcon = (props: any): JSX.Element => (
     <svg
       role="img"
       viewBox="0 0 24 24"
-      aria-labelledby="closeIconTitle"
       stroke={props.color}
-      strokeWidth="1"
-      strokeLinecap="square"
-      strokeLinejoin="miter"
-      fill="none"
+      aria-labelledby="closeIconTitle"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       {...props}
     >
       <title id="closeIconTitle">Close</title>

@@ -44,6 +44,10 @@ type containerPositionStyle = {
   [position: string]: string;
 };
 
+type containerAnimationStyle = {
+  [position: string]: string;
+};
+
 type toastType = {
   [type: string]: string;
 };
@@ -82,7 +86,6 @@ export const notification = style({
   position: 'relative',
   margin: '0 0 6px',
   marginBottom: '15px',
-  borderRadius: '6px',
   boxShadow: '0px 16px 32px rgba(0, 0, 0, 0.12)',
 });
 
@@ -102,6 +105,22 @@ export const content = style({
       letterSpacing: '0.006em',
     },
   },
+});
+
+export const myCustomActionsStyles = style({
+  display: 'flex',
+  alignItems: 'center',
+  $nest: {
+    '> button:first-child': {
+      marginRight: '15px',
+    },
+  },
+});
+
+export const myCustomContentStyles = style({
+  display: 'flex',
+  flexDirection: 'column',
+  fontFamily: 'Roboto, sans-serif',
 });
 
 export const leftIcon = style({
@@ -142,54 +161,74 @@ const containerTopRight = style({
   right: '15px',
 });
 
-// TOAST
+// TOAST ANIMATION
 
-const toastBottomCenter = style({
-  left: '0',
-  bottom: '0',
+const animationBottomCenter = style({
   animationDuration: '.7s',
   animationIterationCount: 'ease-in-out',
   animationName: animationToastBottom,
 });
 
-const toastBottomLeft = style({
-  bottom: '0',
-  left: '0',
+const animationBottomLeft = style({
   animationDuration: '.7s',
   animationIterationCount: 'ease-in-out',
   animationName: animationToastLeft,
 });
 
-const toastBottomRight = style({
-  bottom: '0',
-  right: '0',
+const animationBottomRight = style({
   animationDuration: '.7s',
   animationIterationCount: 'ease-in-out',
   animationName: animationToastRight,
 });
 
-const toastTopCenter = style({
-  left: '0',
-  top: '0',
+const animationTopCenter = style({
   animationDuration: '.7s',
   animationIterationCount: 'ease-in-out',
   animationName: animationToastTop,
 });
 
-const toastTopLeft = style({
-  top: '0',
-  left: '0',
+const animationTopLeft = style({
   animationDuration: '.7s',
   animationIterationCount: 'ease-in-out',
   animationName: animationToastLeft,
 });
 
-const toastTopRight = style({
-  top: '0',
-  right: '0',
+const animationTopRight = style({
   animationDuration: '.7s',
   animationIterationCount: 'ease-in-out',
   animationName: animationToastRight,
+});
+
+// TOAST POSITION
+
+const toastBottomCenter = style({
+  left: '0',
+  bottom: '0',
+});
+
+const toastBottomLeft = style({
+  bottom: '0',
+  left: '0',
+});
+
+const toastBottomRight = style({
+  bottom: '0',
+  right: '0',
+});
+
+const toastTopCenter = style({
+  left: '0',
+  top: '0',
+});
+
+const toastTopLeft = style({
+  top: '0',
+  left: '0',
+});
+
+const toastTopRight = style({
+  top: '0',
+  right: '0',
 });
 
 export const toastPosition: toastPositionStyle = {
@@ -199,6 +238,15 @@ export const toastPosition: toastPositionStyle = {
   ['top-center']: toastTopCenter,
   ['top-left']: toastTopLeft,
   ['top-right']: toastTopRight,
+};
+
+export const toastAnimation: containerAnimationStyle = {
+  ['bottom-center']: animationBottomCenter,
+  ['bottom-left']: animationBottomLeft,
+  ['bottom-right']: animationBottomRight,
+  ['top-center']: animationTopCenter,
+  ['top-left']: animationTopLeft,
+  ['top-right']: animationTopRight,
 };
 
 export const containerPosition: containerPositionStyle = {
@@ -213,8 +261,8 @@ export const containerPosition: containerPositionStyle = {
 const COLORS = {
   DANGER: '#CC2964',
   SUCCESS: '#00825B',
-  WARNING: '#EBBA3E',
-  INFO: '#176AE6',
+  WARNING: '#DDBB64',
+  INFO: '#176AE5',
   DEFAULT_BLACK: '#000',
   DEFAULT_WHITE: '#FFF',
 };

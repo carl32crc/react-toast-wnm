@@ -1,21 +1,17 @@
 import React from 'react';
 import { Toast } from './Toast';
+import { Actions } from './components/Actions';
 
-import { CustomContent } from './components/Content';
+import {
+  SuccessContent,
+  ErrorContent,
+  WarningContent,
+  InfoContent,
+} from './components/Content';
 
 export default {
-  title: 'Simple Toast/Custom',
+  title: 'Simple Toast/Default',
   argTypes: {
-    backgroundColor: {
-      type: { name: 'string', required: false },
-      description: 'Set your custom background color',
-      table: {
-        type: { summary: 'string' },
-      },
-      control: {
-        type: 'color',
-      },
-    },
     borderRadius: {
       type: { name: 'string', required: false },
       description: 'Set your custom border radius',
@@ -25,22 +21,18 @@ export default {
       },
       control: 'text',
     },
-    children: {
-      type: { name: 'Object', required: false },
-      description: `Sample: {{ actions: MyActionsReactElement, content: MyContentReactElement  }}`,
+    type: {
+      type: { name: 'string', required: false },
+      description: 'Set type toast',
       table: {
         type: {
-          summary: 'Object {actions: ReactElement, content: ReactElement}',
+          summary: `string ('default' | 'error' | 'warning' | 'success' | 'info')`,
         },
       },
-    },
-    color: {
-      type: { name: 'string', required: false },
-      description: 'Set your custom text color',
-      table: {
-        type: { summary: 'string' },
+      control: {
+        type: 'select',
+        options: ['default', 'error', 'warning', 'success', 'info'],
       },
-      control: 'color',
     },
     enableAnimation: {
       type: { name: 'boolean', required: false },
@@ -66,27 +58,6 @@ export default {
         defaultValue: { summary: '104px' },
       },
       control: 'text',
-    },
-    id: {
-      type: { name: 'string', required: false },
-      description: 'Set id',
-      table: {
-        type: { summary: 'string' },
-      },
-    },
-    onMouseEnter: {
-      type: { name: 'function', required: false },
-      description: 'Set your function onMouseEnter',
-      table: {
-        type: { summary: 'funcion (): void => {}' },
-      },
-    },
-    onMouseLeave: {
-      type: { name: 'function', required: false },
-      description: 'Set your function onMouseLeave',
-      table: {
-        type: { summary: 'function (): void => {}' },
-      },
     },
     padding: {
       type: { name: 'string', required: false },
@@ -117,20 +88,26 @@ export default {
   },
 };
 
-export const Custom = (args): JSX.Element => {
+export const Default = (args: any): JSX.Element => {
+  const content = {
+    default: <SuccessContent />,
+    success: <SuccessContent />,
+    error: <ErrorContent />,
+    info: <InfoContent />,
+    warning: <WarningContent />,
+  };
   return (
     <Toast {...args} enableAnimation={false}>
-      {{ content: <CustomContent /> }}
+      {{ actions: <Actions />, content: content[args.type] }}
     </Toast>
   );
 };
-Custom.args = {
-  backgroundColor: '#fff',
+Default.args = {
   borderRadius: '6px',
-  color: '#000',
   height: '104px',
   padding: '24px 32px',
   subtitle: 'Default subtitle',
   title: 'Default title',
+  type: 'success',
   width: '456px',
 };

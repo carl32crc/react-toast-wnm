@@ -1,21 +1,10 @@
 import React from 'react';
-import { Toast } from './Toast';
-
-import { CustomContent } from './components/Content';
+import { useToast } from './useToast';
+import { Button } from '../components/Button';
 
 export default {
-  title: 'Simple Toast/Custom',
+  title: 'Default Toast Config/Default Toast Hook',
   argTypes: {
-    backgroundColor: {
-      type: { name: 'string', required: false },
-      description: 'Set your custom background color',
-      table: {
-        type: { summary: 'string' },
-      },
-      control: {
-        type: 'color',
-      },
-    },
     borderRadius: {
       type: { name: 'string', required: false },
       description: 'Set your custom border radius',
@@ -24,6 +13,55 @@ export default {
         defaultValue: { summary: '6px' },
       },
       control: 'text',
+    },
+    autoDismiss: {
+      type: { name: 'boolean', required: false },
+      description: 'Set enable o disable',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'true' },
+      },
+      control: { type: 'inline-radio', options: [true, false] },
+    },
+    type: {
+      type: { name: 'string', required: false },
+      description: 'Set type toast',
+      table: {
+        type: {
+          summary: `string ('default' | 'error' | 'warning' | 'success' | 'info')`,
+        },
+      },
+      control: {
+        type: 'select',
+        options: ['default', 'error', 'warning', 'success', 'info'],
+      },
+    },
+    delay: {
+      type: { name: 'number', required: false },
+      description: 'Set seconds autodismiss',
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: '3000' },
+      },
+      control: 'number',
+    },
+    position: {
+      type: { name: 'string', required: false },
+      description: 'Set position toast',
+      table: {
+        type: { summary: 'string' },
+      },
+      control: {
+        type: 'select',
+        options: [
+          'bottom-right',
+          'bottom-center',
+          'bottom-left',
+          'top-right',
+          'top-center',
+          'top-left',
+        ],
+      },
     },
     children: {
       type: { name: 'Object', required: false },
@@ -34,14 +72,6 @@ export default {
         },
       },
     },
-    color: {
-      type: { name: 'string', required: false },
-      description: 'Set your custom text color',
-      table: {
-        type: { summary: 'string' },
-      },
-      control: 'color',
-    },
     enableAnimation: {
       type: { name: 'boolean', required: false },
       description: 'Enable or disable animation',
@@ -49,6 +79,7 @@ export default {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'true' },
       },
+      control: { type: 'inline-radio', options: [true, false] },
     },
     subtitle: {
       type: { name: 'string', required: false },
@@ -117,17 +148,28 @@ export default {
   },
 };
 
-export const Custom = (args): JSX.Element => {
+export const customToast = (args: any): JSX.Element => {
+  const toast = useToast();
   return (
-    <Toast {...args} enableAnimation={false}>
-      {{ content: <CustomContent /> }}
-    </Toast>
+    <Button
+      onClick={(): void => {
+        toast({
+          ...args,
+        });
+      }}
+    >
+      Create my custom toast
+    </Button>
   );
 };
-Custom.args = {
-  backgroundColor: '#fff',
+
+customToast.args = {
+  autoDismiss: true,
+  enableAnimation: true,
+  delay: 3000,
+  type: 'success',
   borderRadius: '6px',
-  color: '#000',
+  position: 'bottom-right',
   height: '104px',
   padding: '24px 32px',
   subtitle: 'Default subtitle',

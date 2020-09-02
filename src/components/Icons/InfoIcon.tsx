@@ -6,9 +6,9 @@ export const InfoIcon = (props: any): JSX.Element => (
     viewBox="0 0 24 24"
     aria-labelledby="infoIconTitle"
     stroke={props.color}
-    strokeWidth="1"
-    strokeLinecap="square"
-    strokeLinejoin="miter"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     fill="none"
     {...props}
   >

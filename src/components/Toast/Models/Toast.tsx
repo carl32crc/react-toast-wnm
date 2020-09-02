@@ -7,9 +7,11 @@ export interface Options {
   actions?: ReactElement;
   autoDismiss?: boolean;
   backgroundColor?: string;
+  borderRadius?: string;
   color?: string;
   content?: ReactElement;
   delay?: number;
+  enableAnimation?: boolean;
   height?: string;
   isClosable?: boolean;
   onDismiss?: (id: string) => void;
@@ -24,8 +26,10 @@ export interface Options {
 export class Toast {
   actions?: ReactElement;
   backgroundColor?: string;
+  borderRadius?: string;
   color?: string;
   content?: ReactElement;
+  enableAnimation?: boolean;
   height?: string;
   id: string;
   padding?: string;
@@ -39,9 +43,11 @@ export class Toast {
     actions,
     autoDismiss = true,
     backgroundColor,
+    borderRadius,
     color,
     content,
     delay = 3000,
+    enableAnimation = true,
     height,
     isClosable = true,
     onDismiss,
@@ -53,6 +59,7 @@ export class Toast {
     width,
   }: Options) {
     this.content = content ? content : contentTypes[type];
+    this.enableAnimation = enableAnimation;
     this.id = generateUUID();
     this.position = position;
     this.type = type;
@@ -60,6 +67,7 @@ export class Toast {
       this.timer = new Timer(onDismiss.bind(undefined, this.id), delay);
     }
     if (backgroundColor) this.backgroundColor = backgroundColor;
+    if (borderRadius) this.borderRadius = borderRadius;
     if (color) this.color = color;
     if (height) this.height = height;
     if (isClosable) this.actions = actions ? actions : <Actions />;
