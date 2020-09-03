@@ -13,6 +13,7 @@
     "build-storybook": "build-storybook -s public",
     "test": "jest --watch --runInBand --detectOpenHandles",
     "coverage": "jest --coverage --runInBand",
+    "codecov": "nyc report --reporter=json > coverage/coverage.json",
     "lint": "eslint './src/**/*.{ts,tsx}'"
   },
   "keywords": [],
@@ -41,6 +42,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "10.x",
     "babel-loader": "^8.1.0",
+    "codecov": "^3.7.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
     "eslint": "6.x",
