@@ -9,8 +9,8 @@
     "build": "rollup -c",
     "format": "prettier-standard --format",
     "storybook": "start-storybook -p 9009 -s public",
-    "deploy-storybook": "storybook-to-ghpages",
-    "build-storybook": "build-storybook -s public",
+    "deploy-storybook": "storybook-to-ghpages --out=dist_storybook --existing-output-dir=dist_storybook --ci",
+    "build-storybook": "build-storybook -c .storybook -o dist_storybook",
     "test": "jest --watch --runInBand --detectOpenHandles",
     "coverage": "jest --coverage --runInBand",
     "lint": "eslint './src/**/*.{ts,tsx}'"

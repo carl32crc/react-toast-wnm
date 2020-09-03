@@ -1,4 +1,8 @@
-# [react-toast-wnm]() &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/carl32crc/react-toast-wnm/blob/master/LICENSE) [![codecov](https://codecov.io/gh/carl32crc/react-toast-wnm/branch/master/graph/badge.svg?token=N6PYSXWNYL)](https://codecov.io/gh/carl32crc/react-toast-wnm)
+# [react-toast-wnm](https://carl32crc.github.io/react-toast-wnm/?path=/story/button--sample) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/carl32crc/react-toast-wnm/blob/master/LICENSE) [![codecov](https://codecov.io/gh/carl32crc/react-toast-wnm/branch/master/graph/badge.svg?token=N6PYSXWNYL)](https://codecov.io/gh/carl32crc/react-toast-wnm)
+
+## Demo
+
+[Check demo](https://carl32crc.github.io/react-toast-wnm/?path=/story/button--sample)
 
 ## Toast Hook Params
 
