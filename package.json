@@ -1,12 +1,12 @@
 {
   "name": "react-toast-wnm",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && tsc",
     "format": "prettier-standard --format",
     "storybook": "start-storybook -p 9009 -s public",
     "deploy-storybook": "storybook-to-ghpages --out=dist_storybook --existing-output-dir=dist_storybook --ci",
