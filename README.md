@@ -71,6 +71,8 @@ const CustomContent = (): JSX.Element => (
   </div>
 );
 
+//When you create a custom actions 
+// component, a closeToast prop is injected into your component.
 const CustomActions = ({ closeToast, color, backgroundColor }) => (
   <div className={myCustomActionsStyles}>
     <button style={{ backgroundColor, color }} onClick={closeToast}>
