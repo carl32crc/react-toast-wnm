@@ -148,7 +148,7 @@ export default {
   },
 };
 
-export const customToast = (args: any): JSX.Element => {
+export const defaultToast = (args: any): JSX.Element => {
   const toast = useToast();
   return (
     <Button
@@ -163,7 +163,7 @@ export const customToast = (args: any): JSX.Element => {
   );
 };
 
-customToast.args = {
+defaultToast.args = {
   autoDismiss: true,
   enableAnimation: true,
   delay: 3000,
