@@ -6,7 +6,7 @@ export const ErrorIcon = (props: any): JSX.Element => (
     fill="none"
     aria-labelledby="skullIconTitle"
     stroke={props.color}
-    strokeWidth="1.5"
+    strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
     {...props}

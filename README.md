@@ -11,6 +11,11 @@ $ yarn add react-toast-wnm
 
 [Check demo](https://carl32crc.github.io/react-toast-wnm/?path=/story/button--sample)
 
+## Icons
+
+[ikonate github](https://github.com/mikolajdobrucki/ikonate)
+[ikonate icons](https://ikonate.com)
+
 ## Toast Hook Params
 
 - `position` options -> `'bottom-right' | 'bottom-center' | 'bottom-left' | 'top-left' | 'top-center' | 'top-right'`.
@@ -71,7 +76,7 @@ const MyComponent = () => {
 ```jsx
 import { useToast } from 'react-toast-wnm'
 
-const CustomContent = (): JSX.Element => (
+const CustomContent = () => (
   <div className={myCustomContentStyles}>
     <div>My custom title</div>
     <div>My custom subtitle</div>
@@ -87,14 +92,14 @@ const CustomActions = ({ closeToast, color, backgroundColor }) => (
     </button>
     <button style={{ backgroundColor, color }}>Other button</button>
   </div>
-);
+)
 
 const MyComponent = () => {
-  const toast = useToast();
+  const toast = useToast()
 
   return (
     <Button
-      onClick={(): void => {
+      onClick={() => {
         toast({
           delay: 5000,
           backgroundColor: '#fff',
@@ -114,7 +119,7 @@ const MyComponent = () => {
     >
       Create my custom toast
     </Button>
-  );
+  )
 }
 
 ```

@@ -158,7 +158,7 @@ export const defaultToast = (args: any): JSX.Element => {
         });
       }}
     >
-      Create my custom toast
+      Create my default toast
     </Button>
   );
 };
