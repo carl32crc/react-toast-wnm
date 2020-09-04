@@ -81,7 +81,7 @@ const CustomContent = () => (
     <div>My custom title</div>
     <div>My custom subtitle</div>
   </div>
-);
+)
 
 //When you create a custom actions 
 // component, a closeToast prop is injected into your component.
