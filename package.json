@@ -1,10 +1,14 @@
 {
   "name": "react-toast-wnm",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "/build"
+  ],
   "scripts": {
     "build": "rm -rf build && rollup -c && tsc --emitDeclarationOnly",
     "format": "prettier-standard --format",
