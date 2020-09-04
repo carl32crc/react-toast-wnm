@@ -19,7 +19,6 @@
     "coverage": "jest --coverage --runInBand",
     "lint": "eslint './src/**/*.{ts,tsx}'"
   },
-  "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
@@ -100,5 +99,16 @@
   "dependencies": {
     "typestyle": "^2.1.0",
     "uuid": "^8.3.0"
-  }
+  },
+  "keywords": [
+    "toast",
+    "toasts",
+    "notification",
+    "notifications",
+    "react-component",
+    "javascript",
+    "custom-toast",
+    "custom-toasts",
+    "component"
+  ]
 }
