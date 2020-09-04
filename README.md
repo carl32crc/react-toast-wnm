@@ -32,7 +32,7 @@
 import { useToast } from 'react-toast-wnm'
 
 const MyComponent = () => {
-  const { toast } = useToast();
+  const toast = useToast();
 
   return (
     <Button
@@ -83,7 +83,7 @@ const CustomActions = ({ closeToast, color, backgroundColor }) => (
 );
 
 const MyComponent = () => {
-  const { toast } = useToast();
+  const toast = useToast();
 
   return (
     <Button
