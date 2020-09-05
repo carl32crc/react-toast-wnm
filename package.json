@@ -10,7 +10,7 @@
     "/build"
   ],
   "scripts": {
-    "build": "rm -rf build && rollup -c && tsc --emitDeclarationOnly",
+    "build": "rm -rf build && rollup -c && tsc",
     "format": "prettier-standard --format",
     "storybook": "start-storybook -p 9009 -s public",
     "deploy-storybook": "storybook-to-ghpages --out=dist_storybook --existing-output-dir=dist_storybook --ci",
