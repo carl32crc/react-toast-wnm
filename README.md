@@ -26,16 +26,17 @@ $ yarn add react-toast-wnm
 | autoDismiss `boolean`                  | Default: `true`. Disable or enable dismiss autoclose toast.                              |
 | backgroundColor `string`               | Default `''`. Toast backgroundColor                                                      |
 | borderRadius `string`                  | Default `6px` . Toast border toast.                                                      |
-| children `Object{actions, content}`    | Optional. Toast content and action custom.                                               |   
-| color `string`                         | Default `''`. Color text toast.                                                          |    
+| children `Object{actions, content}`    | Optional. Toast content and action custom.                                               |
+| color `string`                         | Default `''`. Color text toast.                                                          |
 | delay `number`                         | Default `3000`. The time until a toast will be dismissed automatically, in milliseconds. |
-| enableAnimation `bolean`               | Default: `true`.                                                                         |
+| enableAnimation `boolean`              | Default: `true`.                                                                         |
 | height `string`                        | Default `104px`. Toast height.                                                           |
+| isClosable `boolean`                   | Default `true` . Show or hide close button.                                              |
 | padding `string`                       | Default `24px 32px`. Toast padding.                                                      |
 | position `string`                      | Default `bottom-right`. Viewport place the toasts.                                       |
 | subtitle `string`                      | Default `''`. Toast title.                                                               |
 | title `string`                         | Default `''`. Toast subtitle.                                                            |
-| type `string`                          | Default `default`. Type toast.                                                           |        
+| type `string`                          | Default `default`. Type toast.                                                           |
 | width `string`                         | Default `456px`. Toast width.                                                            |
 
 ## Default sample use

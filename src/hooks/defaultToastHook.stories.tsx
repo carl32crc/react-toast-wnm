@@ -23,6 +23,15 @@ export default {
       },
       control: { type: 'inline-radio', options: [true, false] },
     },
+    isClosable: {
+      type: { name: 'boolean', required: false },
+      description: 'Show or hide close button',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'true' },
+      },
+      control: { type: 'inline-radio', options: [true, false] },
+    },
     type: {
       type: { name: 'string', required: false },
       description: 'Set type toast',
@@ -165,6 +174,7 @@ export const defaultToast = (args: any): JSX.Element => {
 
 defaultToast.args = {
   autoDismiss: true,
+  isClosable: true,
   enableAnimation: true,
   delay: 3000,
   type: 'success',
