@@ -19,6 +19,10 @@ class ToastController {
   }
 
   removeToast = (id: string): void => {
+    const toast = this.toasts.find((toast: Toast) => toast.id === id);
+    if (toast?.timer) {
+      toast.timer.clear();
+    }
     this.toasts = this.toasts.filter((toast: Toast) => toast.id !== id);
     this.subject.publish(this);
   };
