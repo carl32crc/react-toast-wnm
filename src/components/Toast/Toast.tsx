@@ -31,63 +31,65 @@ type ToastOptions = {
   };
 };
 
-export const Toast: React.FC<ToastOptions> = ({
-  backgroundColor,
-  borderRadius = '6px',
-  children,
-  color = '#fff',
-  enableAnimation = true,
-  height = '104px',
-  id,
-  onMouseEnter,
-  onMouseLeave,
-  padding = '24px 32px',
-  position = 'bottom-right',
-  subtitle,
-  title,
-  type = 'default',
-  width = '456px',
-}) => {
-  const _backgroundColor = style({
+export const Toast: React.FC<ToastOptions> = React.memo(
+  ({
     backgroundColor,
-  });
-  const _borderRadius = style({
-    borderRadius,
-  });
-  const _color = style({
-    color,
-  });
-  const _height = style({
-    height,
-  });
-  const _padding = style({
-    padding,
-  });
-  const _width = style({
-    width,
-  });
-  return (
-    <div
-      className={classes(
-        _backgroundColor,
-        _borderRadius,
-        _color,
-        _height,
-        _padding,
-        _width,
-        notification,
-        enableAnimation && toastAnimation[position],
-        toastPosition[position],
-        !backgroundColor && toastType[type],
-        wrapperToastGenericStyles
-      )}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      <Content subtitle={subtitle} title={title}>
-        {children?.content && children.content}
-      </Content>
-      <Actions id={id}>{children?.actions && children.actions}</Actions>
-    </div>
-  );
-};
+    borderRadius = '6px',
+    children,
+    color = '#fff',
+    enableAnimation = true,
+    height = '104px',
+    id,
+    onMouseEnter,
+    onMouseLeave,
+    padding = '24px 32px',
+    position = 'bottom-right',
+    subtitle,
+    title,
+    type = 'default',
+    width = '456px',
+  }) => {
+    const _backgroundColor = style({
+      backgroundColor,
+    });
+    const _borderRadius = style({
+      borderRadius,
+    });
+    const _color = style({
+      color,
+    });
+    const _height = style({
+      height,
+    });
+    const _padding = style({
+      padding,
+    });
+    const _width = style({
+      width,
+    });
+    return (
+      <div
+        className={classes(
+          _backgroundColor,
+          _borderRadius,
+          _color,
+          _height,
+          _padding,
+          _width,
+          notification,
+          enableAnimation && toastAnimation[position],
+          toastPosition[position],
+          !backgroundColor && toastType[type],
+          wrapperToastGenericStyles
+        )}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        <Content subtitle={subtitle} title={title}>
+          {children?.content && children.content}
+        </Content>
+        <Actions id={id}>{children?.actions && children.actions}</Actions>
+      </div>
+    );
+  }
+);

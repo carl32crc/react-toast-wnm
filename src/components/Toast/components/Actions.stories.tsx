@@ -11,7 +11,7 @@ export default {
         component, a closeToast prop is injected into your component.`,
       table: {
         type: { summary: 'callback (optional)' },
-      }
+      },
     },
   },
 };
